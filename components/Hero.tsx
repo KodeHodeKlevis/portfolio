@@ -13,45 +13,51 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="pb-24 pt-36 bg-background relative flex items-center justify-center h-screen">
-    <div className="absolute inset-0 flex items-center justify-center w-full h-full">
-        
+    <section className="pb-24 pt-36 bg-background relative flex items-center justify-center h-screen overflow-hidden">
+      <div className="absolute inset-0 flex items-center justify-center w-full h-full">
+        {/* Left Spotlight (Red) */}
         <Spotlight
         className={cn(
-            "absolute top-[30%] left-0 lg:left-[450px] md:left-[40px] transform rotate-[30deg] z-10 filter opacity-90", // Add left shift for large screens
+            "absolute top-[30%] left-0 lg:left-[450px] md:left-[40px] transform rotate-[30deg] z-10 filter opacity-90",
             isVisible ? "transition-all duration-500" : "opacity-0",
-            "w-[250px] h-[250px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px]"
-        )}
-        fill="red"
-        />
-
-        <Spotlight
-        className={cn(
-            "absolute top-[30%] right-0 lg:right-[459px] md:right-[40px] transform rotate-[75deg] z-10 filter opacity-90", // Positioned to the right on all screen sizes
-            isVisible ? "transition-all duration-500" : "opacity-0",
-            // Adjust size for different devices
-            "w-[250px] h-[250px] sm:w-[100px] sm:h-[100px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px] sm:right-[10px]" // Adjust right position for smaller screens
+            "w-[400px] h-[400px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]" // Increased size for larger spotlights
         )}
         fill="white"
         />
 
-        
+        {/* Right Spotlight (Blue, on the right of Red) */}
         <Spotlight
         className={cn(
-            "absolute top-[32%] right-[20%] w-[24vw] h-[50vh] transform rotate-[85deg] z-10 filter opacity-10",
+            "absolute top-[30%] right-[30px] lg:right-[500px] md:right-[50px] transform rotate-[40deg] z-10 filter opacity-90",
             isVisible ? "transition-all duration-500" : "opacity-0",
-            "hidden lg:block sm:w-[35vw] sm:h-[40vh]" // Hidden on small screens, visible on large (lg) screens
+            "w-[400px] h-[400px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]" // Increased size for larger spotlights
         )}
         fill="white"
         />
+
+        <div className="overflow-hidden">
+        {/* Right Spotlight (White) */}
+        <Spotlight
+            className={cn(
+            "absolute top-[30%] right-0 lg:right-[459px] md:right-[40px] transform rotate-[75deg] z-10 filter opacity-90",
+            isVisible ? "transition-all duration-500" : "opacity-0",
+            "w-[400px] h-[400px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]",
+            "sm:max-w-[calc(100%-20px)]"
+            )}
+            fill="white"
+        />
+        </div>
+
+        {/* Left Spotlight (Yellow, on the left of White) */}
         <Spotlight
         className={cn(
-            "absolute top-[30%] left-[25%] w-[24vw] h-[50vh] transform rotate-[40deg] z-10 filter opacity-10",
+            "absolute top-[32%] left-[10px] lg:left-[500px] md:left-[50px] transform rotate-[80deg] z-10 filter opacity-10",
             isVisible ? "transition-all duration-500" : "opacity-0",
-            "hidden lg:block sm:w-[35vw] sm:h-[40vh]" // Hidden on small screens, visible on large (lg) screens
+            "w-[400px] h-[400px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]" // Increased size for larger spotlights
         )}
-        fill="blue"
+        fill="white"
         />
+
       </div>
 
       {/* Background grid */}
@@ -77,7 +83,9 @@ const Hero = () => {
             className="text-center text-[30px] sm:text-4xl md:text-5xl lg:text-7xl"
             words="Welcome to my Portfolio"
           />
-          <p className="text-center md:tracking-wider mb-5 text-sm md:text-lg lg:text-1xl" > Hello, I&apos;m Klevis. <br></br> An up and coming Full-Stack Developer based in Norway.</p>
+          <p className="text-center md:tracking-wider mb-5 text-sm md:text-lg lg:text-1xl">
+            Hello, I&apos;m Klevis. <br /> An up and coming Full-Stack Developer based in Norway.
+          </p>
         </div>
       </div>
     </section>
