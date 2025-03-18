@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000501;
+  --foreground: #d6d5c9;
+  --custom-red: #902923;
 }
 
 @theme inline {
@@ -10,12 +11,25 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000501;
+    --foreground: #d6d5c9;
+    --custom-red: #902923;
   }
 }
 
@@ -24,3 +38,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base [
+  :root{
+    --custom-red: #902923;
+  }
+
+  .text-custom-red {
+    color: var(--custom-red);
+  }
+
+  .bg-custom-red {
+    background-color: var(--custom-red);
+  }
+]
