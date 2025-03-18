@@ -3,7 +3,7 @@
 :root {
   --background: #000501;
   --foreground: #d6d5c9;
-  --custom-red: #902923;
+  --custom-red: #A22C29;
 }
 
 @theme inline {
@@ -29,7 +29,7 @@
   :root {
     --background: #000501;
     --foreground: #d6d5c9;
-    --custom-red: #902923;
+    --custom-red: #A22C29;
   }
 }
 
@@ -41,7 +41,7 @@ body {
 
 @layer base [
   :root{
-    --custom-red: #902923;
+    --custom-red: #A22C29;
   }
 
   .text-custom-red {

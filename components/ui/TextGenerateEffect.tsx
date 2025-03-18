@@ -41,7 +41,7 @@ export const TextGenerateEffect = ({
               style={{
                 color: idx >= 3 ? "var(--custom-red)" : "var(--foreground)",  
                 filter: filter ? "blur(10px)" : "none",
-                textShadow: idx >= 3 ? "0px 0px 5px rgba(255, 255, 255, 0.3)" : "0px 0px 5px rgba(0, 0, 0, 0.3)",
+                textShadow: idx >= 3 ? "0px 0px 5px rgba(255, 255, 255, 0.4)" : "0px 0px 5px rgba(0, 0, 0, 0.4)",
                 textTransform: word.toLowerCase() === "portfolio" ? "uppercase" : "none", 
               }}
             >

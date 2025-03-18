@@ -15,49 +15,59 @@ const Hero = () => {
   return (
     <section className="pb-24 pt-36 bg-background relative flex items-center justify-center h-screen overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center w-full h-full">
-        {/* Left Spotlight (Red) */}
+        {/* Group 1: Red and White Spotlights Together */}
         <Spotlight
-        className={cn(
-            "absolute top-[30%] left-0 lg:left-[450px] md:left-[40px] transform rotate-[30deg] z-10 filter opacity-90",
+          className={cn(
+            "absolute top-[-10%] left-[50%] transform -translate-x-1/2 rotate-[30deg] z-10 filter opacity-90",
             isVisible ? "transition-all duration-500" : "opacity-0",
-            "w-[400px] h-[400px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]" // Increased size for larger spotlights
-        )}
-        fill="white"
+            "w-[400px] h-[800px] sm:w-[250px] sm:h-[500px] md:w-[300px] md:h-[600px] lg:w-[400px] lg:h-[800px]"
+          )}
+          fill="red" // Slight red hue
+        />
+        <Spotlight
+          className={cn(
+            "absolute top-[-10%] left-[50%] transform -translate-x-1/2 rotate-[50deg] z-10 filter opacity-80",
+            isVisible ? "transition-all duration-500" : "opacity-0",
+            "w-[400px] h-[800px] sm:w-[250px] sm:h-[500px] md:w-[300px] md:h-[600px] lg:w-[400px] lg:h-[800px]"
+          )}
+          fill="white"
         />
 
-        {/* Right Spotlight (Blue, on the right of Red) */}
+        {/* Group 2: Red and White Spotlights Together */}
         <Spotlight
-        className={cn(
-            "absolute top-[30%] right-[30px] lg:right-[500px] md:right-[50px] transform rotate-[40deg] z-10 filter opacity-90",
+          className={cn(
+            "absolute top-[-10%] left-[50%] transform -translate-x-1/2 rotate-[70deg] z-10 filter opacity-70",
             isVisible ? "transition-all duration-500" : "opacity-0",
-            "w-[400px] h-[400px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]" // Increased size for larger spotlights
-        )}
-        fill="white"
+            "w-[400px] h-[800px] sm:w-[250px] sm:h-[500px] md:w-[300px] md:h-[600px] lg:w-[400px] lg:h-[800px]"
+          )}
+          fill="red"
+        />
+        <Spotlight
+          className={cn(
+            "absolute top-[-10%] left-[50%] transform -translate-x-1/2 rotate-[90deg] z-10 filter opacity-60",
+            isVisible ? "transition-all duration-500" : "opacity-0",
+            "w-[400px] h-[800px] sm:w-[250px] sm:h-[500px] md:w-[300px] md:h-[600px] lg:w-[400px] lg:h-[800px]"
+          )}
+          fill="white"
         />
 
-        <div className="overflow-hidden">
-        {/* Right Spotlight (White) */}
+        {/* Group 3: Red and White Spotlights Together */}
         <Spotlight
-            className={cn(
-            "absolute top-[30%] right-0 lg:right-[459px] md:right-[40px] transform rotate-[75deg] z-10 filter opacity-90",
+          className={cn(
+            "absolute top-[-10%] left-[50%] transform -translate-x-1/2 rotate-[110deg] z-10 filter opacity-50",
             isVisible ? "transition-all duration-500" : "opacity-0",
-            "w-[400px] h-[400px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]",
-            "sm:max-w-[calc(100%-20px)]"
-            )}
-            fill="white"
+            "w-[400px] h-[800px] sm:w-[250px] sm:h-[500px] md:w-[300px] md:h-[600px] lg:w-[400px] lg:h-[800px]"
+          )}
+          fill="red"
         />
-        </div>
-
-        {/* Left Spotlight (Yellow, on the left of White) */}
         <Spotlight
-        className={cn(
-            "absolute top-[32%] left-[10px] lg:left-[500px] md:left-[50px] transform rotate-[80deg] z-10 filter opacity-10",
+          className={cn(
+            "absolute top-[-10%] left-[50%] transform -translate-x-1/2 rotate-[130deg] z-10 filter opacity-40",
             isVisible ? "transition-all duration-500" : "opacity-0",
-            "w-[400px] h-[400px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]" // Increased size for larger spotlights
-        )}
-        fill="white"
+            "w-[400px] h-[800px] sm:w-[250px] sm:h-[500px] md:w-[300px] md:h-[600px] lg:w-[400px] lg:h-[800px]"
+          )}
+          fill="white"
         />
-
       </div>
 
       {/* Background grid */}
