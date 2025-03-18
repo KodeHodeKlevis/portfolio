@@ -27,12 +27,14 @@ const Hero = () => {
 
         <Spotlight
         className={cn(
-            "absolute top-[25%] right-[10%]  transform rotate-[80deg] z-10 filter opacity-90",
+            "absolute top-[30%] right-0 lg:right-[459px] md:right-[40px] transform rotate-[75deg] z-10 filter opacity-90", // Positioned to the right on all screen sizes
             isVisible ? "transition-all duration-500" : "opacity-0",
-            "w-[300px] h-[450px] sm:w-[100px] sm:h-[100px] md:w-[300px] md:h-[300px] sm:left-[12px] md:left-[60%]" // Hidden on small screens, visible on large (lg) screens
+            // Adjust size for different devices
+            "w-[250px] h-[250px] sm:w-[100px] sm:h-[100px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px] sm:right-[10px]" // Adjust right position for smaller screens
         )}
-        fill="pink"
+        fill="white"
         />
+
         
         <Spotlight
         className={cn(
