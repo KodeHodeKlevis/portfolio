@@ -11,11 +11,11 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true); // Ensure animation runs after the component is mounted
+    setIsVisible(true); 
   }, []);
 
   return (
-    <section className="pb-12 pt-24 bg-background relative flex items-center justify-center h-[80vh] overflow-hidden"> {/* Reduced padding and height */}
+    <section className="pb-0 pt-0 bg-background relative flex items-center justify-center min-h-screen overflow-hidden"> {/* Adjusted padding and min-height */}
       <div className="absolute inset-0 flex items-center justify-center w-full h-full">
         {/* Group 1: Red and White Spotlights Together */}
         <Spotlight
@@ -24,7 +24,7 @@ const Hero = () => {
             isVisible ? "transition-all duration-500" : "opacity-0",
             "w-[400px] h-[800px] sm:w-[250px] sm:h-[500px] md:w-[300px] md:h-[600px] lg:w-[400px] lg:h-[800px]"
           )}
-          fill="red" // Slight red hue
+          fill="red"
         />
         <Spotlight
           className={cn(
@@ -83,10 +83,10 @@ const Hero = () => {
             "opacity-30" 
             )}
         />
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_15%,black)] dark:bg-background" /> {/* Decreased the transparency */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_15%,black)] dark:bg-background" />
       </div>
 
-      {/*Text content */}
+      {/* Text content */}
       <div className="flex justify-center relative z-10">
         <div className="flex flex-col items-center justify-center text-center px-4 sm:px-0">
           <h2 className="uppercase tracking-widest text-xs sm:text-sm md:text-xl text-foreground">
@@ -96,15 +96,15 @@ const Hero = () => {
             className="text-center text-[30px] sm:text-4xl md:text-5xl lg:text-7xl"
             words="Welcome to my Portfolio"
           />
-          <p className="text-center md:tracking-wider mb-5 text-sm md:text-lg lg:text-1xl">
-            Hello, I&apos;m Klevis. <br /> An up and coming Full-Stack Developer based in Norway.
+          <p className="text-center md:tracking-wider mb-5 text-sm md:text-lg lg:text-1xl p-1">
+            Hello, I&apos;m Klevis. <br/> An up and coming Full-Stack Developer based in Norway.
           </p>
           <a href="#about" />
           <MagicButton 
-            title=" Show my work"
-            icon = {< FaLocationArrow />}
+            title="Show my work"
+            icon={<FaLocationArrow />}
             position="right"
-           />
+          />
         </div>
       </div>
     </section>
