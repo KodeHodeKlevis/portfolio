@@ -14,42 +14,42 @@ const Hero = () => {
 
   return (
     <section className="pb-24 pt-36 bg-background relative flex items-center justify-center h-screen">
-  <div className="absolute inset-0 flex items-center justify-center w-full h-full">
-    {/* Left Spotlight (Red) */}
-    <Spotlight
-      className={cn(
-        "absolute top-[30%] left-[18%] w-[450px] h-[450px] transform rotate-[30deg] z-10 filter opacity-90",
-        isVisible ? "transition-all duration-500" : "opacity-0",
-        "block sm:w-[100px] sm:h-[100px]" // Hidden on small screens, visible on large (lg) screens
-      )}
-      fill="red"
-    />
-    {/* Left Spotlight (White) */}
-    <Spotlight
-      className={cn(
-        "absolute top-[35%] right-[13%] w-[24vw] h-[50vh] transform rotate-[90deg] z-10 filter opacity-10",
-        isVisible ? "transition-all duration-500" : "opacity-0",
-        "hidden lg:block sm:w-[35vw] sm:h-[40vh]" // Hidden on small screens, visible on large (lg) screens
-      )}
-      fill="pink"
-    />
-    
-    <Spotlight
-      className={cn(
-        "absolute top-[32%] right-[20%] w-[24vw] h-[50vh] transform rotate-[85deg] z-10 filter opacity-10",
-        isVisible ? "transition-all duration-500" : "opacity-0",
-        "hidden lg:block sm:w-[35vw] sm:h-[40vh]" // Hidden on small screens, visible on large (lg) screens
-      )}
-      fill="white"
-    />
-    <Spotlight
-      className={cn(
-        "absolute top-[30%] left-[25%] w-[24vw] h-[50vh] transform rotate-[40deg] z-10 filter opacity-10",
-        isVisible ? "transition-all duration-500" : "opacity-0",
-        "hidden lg:block sm:w-[35vw] sm:h-[40vh]" // Hidden on small screens, visible on large (lg) screens
-      )}
-      fill="blue"
-    />
+    <div className="absolute inset-0 flex items-center justify-center w-full h-full">
+        
+        <Spotlight
+        className={cn(
+            "absolute top-[30%] left-0 lg:left-[450px] md:left-[40px] transform rotate-[30deg] z-10 filter opacity-90", // Add left shift for large screens
+            isVisible ? "transition-all duration-500" : "opacity-0",
+            "w-[250px] h-[250px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px]"
+        )}
+        fill="red"
+        />
+
+        <Spotlight
+        className={cn(
+            "absolute top-[25%] right-[10%]  transform rotate-[80deg] z-10 filter opacity-90",
+            isVisible ? "transition-all duration-500" : "opacity-0",
+            "w-[300px] h-[450px] sm:w-[100px] sm:h-[100px] md:w-[300px] md:h-[300px] sm:left-[12px] md:left-[60%]" // Hidden on small screens, visible on large (lg) screens
+        )}
+        fill="pink"
+        />
+        
+        <Spotlight
+        className={cn(
+            "absolute top-[32%] right-[20%] w-[24vw] h-[50vh] transform rotate-[85deg] z-10 filter opacity-10",
+            isVisible ? "transition-all duration-500" : "opacity-0",
+            "hidden lg:block sm:w-[35vw] sm:h-[40vh]" // Hidden on small screens, visible on large (lg) screens
+        )}
+        fill="white"
+        />
+        <Spotlight
+        className={cn(
+            "absolute top-[30%] left-[25%] w-[24vw] h-[50vh] transform rotate-[40deg] z-10 filter opacity-10",
+            isVisible ? "transition-all duration-500" : "opacity-0",
+            "hidden lg:block sm:w-[35vw] sm:h-[40vh]" // Hidden on small screens, visible on large (lg) screens
+        )}
+        fill="blue"
+        />
       </div>
 
       {/* Background grid */}
@@ -57,7 +57,7 @@ const Hero = () => {
         <div
           className={cn(
             "absolute inset-0",
-            "[background-size:20px_20px]",
+            "[background-size:30px_30px]",
             "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_0.1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_0.1px)]",
             "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_0.1px),linear-gradient(to_bottom,#262626_1px,transparent_0.1px)]"
           )}
