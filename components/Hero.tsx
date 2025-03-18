@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { cn } from "@/lib/utils";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import MagicButton from "./ui/MagicButton";
+import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +15,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="pb-24 pt-36 bg-background relative flex items-center justify-center h-screen overflow-hidden">
+    <section className="pb-12 pt-24 bg-background relative flex items-center justify-center h-[80vh] overflow-hidden"> {/* Reduced padding and height */}
       <div className="absolute inset-0 flex items-center justify-center w-full h-full">
         {/* Group 1: Red and White Spotlights Together */}
         <Spotlight
@@ -73,17 +75,18 @@ const Hero = () => {
       {/* Background grid */}
       <div className="absolute top-0 left-0 flex w-full h-full items-center justify-center bg-white dark:bg-background">
         <div
-          className={cn(
+            className={cn(
             "absolute inset-0",
             "[background-size:30px_30px]",
             "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_0.1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_0.1px)]",
-            "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_0.1px),linear-gradient(to_bottom,#262626_1px,transparent_0.1px)]"
-          )}
+            "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_0.1px),linear-gradient(to_bottom,#262626_1px,transparent_0.1px)]",
+            "opacity-30" 
+            )}
         />
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-background" />
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_15%,black)] dark:bg-background" /> {/* Decreased the transparency */}
       </div>
 
-      {/* Centered text content */}
+      {/*Text content */}
       <div className="flex justify-center relative z-10">
         <div className="flex flex-col items-center justify-center text-center px-4 sm:px-0">
           <h2 className="uppercase tracking-widest text-xs sm:text-sm md:text-xl text-foreground">
@@ -96,6 +99,12 @@ const Hero = () => {
           <p className="text-center md:tracking-wider mb-5 text-sm md:text-lg lg:text-1xl">
             Hello, I&apos;m Klevis. <br /> An up and coming Full-Stack Developer based in Norway.
           </p>
+          <a href="#about" />
+          <MagicButton 
+            title=" Show my work"
+            icon = {< FaLocationArrow />}
+            position="right"
+           />
         </div>
       </div>
     </section>
