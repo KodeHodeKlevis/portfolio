@@ -15,7 +15,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="pb-0 pt-0 bg-background relative flex items-center justify-center min-h-screen overflow-hidden"> {/* Adjusted padding and min-height */}
+    <section id="hero"  className="pb-0 pt-0 bg-background relative flex items-center justify-center min-h-screen overflow-hidden"> 
       <div className="absolute inset-0 flex items-center justify-center w-full h-full">
         {/* Group 1: Red and White Spotlights Together */}
         <Spotlight
