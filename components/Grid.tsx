@@ -1,9 +1,10 @@
 import { gridItems } from '@/data';
 import { BentoGrid, BentoGridItem } from './ui/BentoGrid';
+import '../components/aurora.css';
 
 const Grid = () => {
   return (
-    <section id='about'>
+    <section  className="aurora-background">
       <BentoGrid>
         {gridItems.map(({ id, description, title, className, imgName, titleClassName, img, spareImg }) => (
           <BentoGridItem

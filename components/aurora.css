@@ -1,0 +1,18 @@
+/* styles/aurora.css */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.aurora-background {
+  background: linear-gradient(-30deg, #a22c29, #000501, #000501);
+  background-size: 400% 400%;
+  animation: aurora 15s ease infinite;
+}
