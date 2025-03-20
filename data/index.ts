@@ -1,14 +1,13 @@
 export const gridItems = [
   {
     id: 1,
-    title: "Welcoming with a nice message",
-    description: "I am a developer and I love to code",
+    title: "Let's Create something amazing",
+    description: "Your collaboration and ideas are what are important and what i value most in this process.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-3 xl:col-span-3 xl:row-span-4 2xl:col-span-2 2xl:row-span-3",
     imgName: "w-full h-full",
     titleClassName: "justify-end",
     img: "/laptop.svg",
     spareImg: "",
-    showAurora: true,
   },
   {
     id: 2,
@@ -19,7 +18,6 @@ export const gridItems = [
     titleClassName: "justify-start",
     img: "",
     spareImg: "",
-    showAurora: false,
   },
   {
     id: 3,
@@ -30,7 +28,6 @@ export const gridItems = [
     titleClassName: "justify-center",
     img: "",
     spareImg: "",
-    showAurora: false,
   },
   {
     id: 4,
@@ -41,7 +38,6 @@ export const gridItems = [
     titleClassName: "justify-start",
     img: "",
     spareImg: "",
-    showAurora: false,
   },
   {
     id: 5,
@@ -52,7 +48,6 @@ export const gridItems = [
     titleClassName: "justify-center md:justify-start lg:justify-center",
     img: "",
     spareImg: "",
-    showAurora: false,
   },
   {
     id: 6,
@@ -63,6 +58,5 @@ export const gridItems = [
     titleClassName: "justify-center md:max-w-full max-w-60 text-center",
     img: "",
     spareImg: "",
-    showAurora: false,
   },
 ];
