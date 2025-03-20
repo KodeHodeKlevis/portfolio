@@ -1,12 +1,12 @@
   export const gridItems = [
     {
       id: 1,
-      title: "Welcoming with a nice message  ",
-      description: "",
-      className: "lg:col-span-2 md:col-span-2 md:row-span-2",
+      title: "Welcoming with a nice message",
+      description: "I am a developer and i love to code",
+      className: "lg:col-span-2 md:col-span-3 md:row-span-3 xl:col-span-3 xl:row-span-4 2xl:col-span-2 2xl:row-span-3",
       imgName: "w-full h-full",
       titleClassName: "justify-end",
-      img: "/b1.svg",
+      img: "/laptop.svg",
       spareImg: "",
     },
     {
@@ -36,8 +36,8 @@
       className: "lg:col-span-1 md:col-span-3 lg:row-span-1",
       imgName: "",
       titleClassName: "justify-start",
-      img: "/grid.svg",
-      spareImg: "/b4.svg",
+      img: "",
+      spareImg: "",
     },
   
     {
@@ -47,8 +47,8 @@
       className: " lg:col-span-2 lg:row-span-3  md:col-span-3 md:row-span-2",
       imgName: "absolute right-0 bottom-0 md:w-96 w-60",
       titleClassName: "justify-center md:justify-start lg:justify-center",
-      img: "/b5.svg",
-      spareImg: "/grid.svg",
+      img: "",
+      spareImg: "",
     },
     {
       id: 6,
