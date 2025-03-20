@@ -58,7 +58,7 @@ export const gridItems = [
     id: 6,
     title: "What I am enthusiastic about",
     description: "",
-    className: "lg:col-span-1 md:col-span-3 lg:row-span-2",
+    className: "lg:col-span-1 md:col-span-3 lg:row-span-3",
     imgName: "",
     titleClassName: "justify-center md:max-w-full max-w-60 text-center",
     img: "",

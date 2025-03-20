@@ -50,31 +50,24 @@ export const BentoGridItem = ({
       }}
     >
       {/* Image or spare image */}
-      {img && (
-        <div className="relative my-10 w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] 2xl:h-[900px] rounded-lg overflow-hidden">
-          <img src={img} alt="Bento Image" className="object-cover w-full h-full max-w-full max-h-full" />
-        </div>
-      )}
-
-      {spareImg && !img && (
-        <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] 2xl:h-[900px] rounded-lg overflow-hidden">
+      {(img || spareImg) && (
+        <div className="relative w-full h-[auto] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] 2xl:h-[800px] rounded-lg overflow-hidden flex items-center justify-center">
           <img
-            src={spareImg}
-            alt="Spare Image"
-            className="object-cover w-full h-full opacity-80 max-w-full max-h-full"
+            src={img || spareImg} // Ensure this points to the correct image file
+            alt={img ? "Bento Image" : "Spare Image"}
+            className="object-cover w-full h-full max-w-full max-h-full"
           />
         </div>
       )}
 
       {/* Content */}
-
       <div className="transition duration-200 group-hover/bento:translate-x-2">
         <div className={`mt-2 font-sans font-bold ${titleClassName || "text-neutral-600 dark:text-neutral-200"}`}>
           {title}
         </div>
-      <div className="fmt-2 mt-2 mb-5 font-sans font-bold text-neutral-600 dark:text-neutral-200 overflow-hidden text-ellipsis whitespace-nowrap">
-        {description}
-      </div>
+        <div className="mt-2 mb-5 font-sans font-bold text-neutral-600 dark:text-neutral-200 overflow-hidden text-ellipsis whitespace-nowrap">
+          {description}
+        </div>
       </div>
     </div>
   );
