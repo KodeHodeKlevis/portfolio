@@ -6,6 +6,7 @@ import { useState } from "react";
 import animationData from '@/data/confetti.json'
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+import dynamic from "next/dynamic";
 
 export const BentoGrid = ({
   className,
@@ -48,11 +49,14 @@ export const BentoGridItem = ({
   spareImg?: string;
   showAvailableHours?: boolean;
 }) => {
+  const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
   const [copied, setCopied] = useState(false); 
   const handleCopy = () => {
-    navigator.clipboard.writeText('klevis25sfj@gmail.com');
-    setCopied(true);
-  }
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText("klevis25sfj@gmail.com");
+      setCopied(true);
+    }
+  };
 
   const availableHoursData = [
     {
