@@ -34,7 +34,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "A small contact section like email for example",
+    title: "Feel free to reach out",
     description: "",
     className: "lg:col-span-1 md:col-span-1 md:row-span-1", // Span 1 column and 1 row on medium and larger screens
     imgName: "",

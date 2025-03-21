@@ -1,6 +1,11 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { CardStack } from "./CardStack"; 
-import { div } from "framer-motion/m";
+import Lottie from "react-lottie";
+import { useState } from "react";
+import animationData from '@/data/confetti.json'
+import MagicButton from "./MagicButton";
+import { IoCopyOutline } from "react-icons/io5";
 
 export const BentoGrid = ({
   className,
@@ -11,14 +16,14 @@ export const BentoGrid = ({
 }) => {
   return (
     <div
-  className={cn(
-    "mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
-    "md:auto-rows-[18rem]", // Standardized row height for medium and larger screens
-    className
-  )}
->
-  {children}
-</div>
+      className={cn(
+        "mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
+        "md:auto-rows-[18rem]", 
+        className
+      )}
+    >
+      {children}
+    </div>
   );
 };
 
@@ -43,6 +48,12 @@ export const BentoGridItem = ({
   spareImg?: string;
   showAvailableHours?: boolean;
 }) => {
+  const [copied, setCopied] = useState(false); 
+  const handleCopy = () => {
+    navigator.clipboard.writeText('klevis25sfj@gmail.com');
+    setCopied(true);
+  }
+
   const availableHoursData = [
     {
       id: 1,
@@ -125,7 +136,7 @@ export const BentoGridItem = ({
           {description}
         </div>
 
-        {/* Skills section, visible only for id === 3 */}
+        {/* Skills section for id === 3 */}
         {id === 3 && (
           <div className="mt-4 w-full flex flex-wrap gap-3 justify-center lg:justify-start">
             <span className="py-4 px-3 rounded-lg text-center bg-rgba(0,5,1,1)" />
@@ -166,9 +177,29 @@ export const BentoGridItem = ({
                 {item}
                 <span className="py-4 px-3 rounded-lg text-center bg-rgba(0,5,1,1)" />
               </span>
-              
             ))}
-            
+          </div>
+        )}
+
+        {/* Email Contact copy  */}
+        {id === 4 && (
+          <div className="mt-5 relative" >
+            <div className="absolute -bottom-5 right-0 " > 
+              <Lottie options={{
+                loop: copied,
+                autoplay: copied,
+                animationData,
+                rendererSettings: {
+                  preserveAspectRatio: 'xMidYMid slice'
+                }
+              }} />
+            </div>
+            <MagicButton
+              title={copied ? 'Email copied' : 'Copy my email'}
+              icon={<IoCopyOutline/>}
+              position="left"
+              handleClick={handleCopy}
+              />
           </div>
         )}
 
