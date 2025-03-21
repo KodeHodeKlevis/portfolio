@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { CardStack } from "./CardStack"; 
+import { div } from "framer-motion/m";
 
 export const BentoGrid = ({
   className,
@@ -30,7 +31,7 @@ export const BentoGridItem = ({
   titleClassName,
   img,
   spareImg,
-  showAvailableHours = false, 
+  showAvailableHours = false,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -40,7 +41,7 @@ export const BentoGridItem = ({
   titleClassName?: string;
   img?: string;
   spareImg?: string;
-  showAvailableHours?: boolean; 
+  showAvailableHours?: boolean;
 }) => {
   const availableHoursData = [
     {
@@ -83,48 +84,97 @@ export const BentoGridItem = ({
 
   return (
     <div
-  className={cn(
-    "group/bento shadow-input flex flex-col justify-between space-y-2 rounded-xl border border-neutral-200 bg-white p-3 transition duration-200 hover:shadow-xl dark:border-red-500/[0.2] dark:bg-background dark:shadow-2xl",
-    "h-full", // Ensure the item takes up the full height of its row
-    className,
-    "overflow-hidden"
-  )}
-  style={{
-    backgroundColor: 'rgb(0,5,1)',
-    backgroundImage: 'linear-gradient(32deg, rgba(0,5,1,1) 46%, rgba(42,15,14,1) 63%)',
-  }}
->
-  {/* Image or spare image */}
-  {(img || spareImg) && (
-    <div className="relative w-full h-[auto] sm:h-[200px] md:h-[250px] lg:h-[300px] rounded-lg overflow-hidden flex items-center justify-center">
-      <img
-        src={img || spareImg}
-        alt={img ? "Bento Image" : "Spare Image"}
-        className="object-cover w-full h-full max-w-full max-h-full"
-      />
-    </div>
-  )}
+      className={cn(
+        "group/bento shadow-input flex flex-col justify-between space-y-2 rounded-xl border border-neutral-200 bg-gradient-to-r from-red-500 via-pink-500 to-yellow-500 p-3 transition duration-200 hover:shadow-xl dark:border-red-500/[0.2] dark:bg-background dark:shadow-2xl",
+        "overflow-hidden",
+        className
+      )}
+      style={{
+        backgroundColor: 'rgb(0,5,1)',
+        backgroundImage: 'linear-gradient(32deg, rgba(0,5,1,1) 46%, rgba(42,15,14,1) 63%)',
+      }}
+    >
+      {/* Image or spare image */}
+      {(img || spareImg) && (
+        <div className="relative w-full h-[auto] sm:h-[200px] md:h-[250px] lg:h-[300px] rounded-lg overflow-hidden flex items-center justify-center">
+          <img
+            src={img || spareImg}
+            alt={img ? "Bento Image" : "Spare Image"}
+            className="object-cover w-full h-full max-w-full max-h-full"
+          />
+        </div>
+      )}
 
-  {/* Conditionally render AvailableHoursCardStack */}
-  {showAvailableHours && (
-    <div className="overflow-hidden h-auto min-h-[150px] sm:min-h-[200px]">
-      <CardStack
-        items={availableHoursData} // Pass the available hours data to CardStack
-        offset={10}
-        scaleFactor={0.06}
-      />
-    </div>
-  )}
+      {/* Conditionally render AvailableHoursCardStack */}
+      {showAvailableHours && (
+        <div className="overflow-hidden h-auto min-h-[150px] sm:min-h-[200px]">
+          <CardStack
+            items={availableHoursData} // Pass the available hours data to CardStack
+            offset={10}
+            scaleFactor={0.06}
+          />
+        </div>
+      )}
 
-  {/* Content */}
-  <div className="transition duration-200 group-hover/bento:translate-x-2">
-    <div className={`mt-2 font-sans font-bold ${titleClassName || "text-white"}`}>
-      {title}
+      {/* Content */}
+      <div className="transition duration-200 group-hover/bento:translate-x-2">
+        <div className={`mt-2 font-sans font-bold ${titleClassName || "text-white"}`}>
+          {title}
+        </div>
+        <div className="mt-2 mb-5 font-sans font-bold text-white overflow-hidden text-ellipsis whitespace-normal">
+          {description}
+        </div>
+
+        {/* Skills section, visible only for id === 3 */}
+        {id === 3 && (
+          <div className="mt-4 w-full flex flex-wrap gap-3 justify-center lg:justify-start">
+            <span className="py-4 px-3 rounded-lg text-center bg-rgba(0,5,1,1)" />
+            {['React.js', 'Next.js', 'TypeScript', 'JavaScript'].map((item, index) => (
+              <span
+                key={item}
+                className={`py-2 lg:py-4 px-3 text-xs lg:text-base font-bold opacity-50 lg:opacity-100 rounded-lg text-center text-foreground`}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Additional Skills for id === 3 */}
+        {id === 3 && (
+          <div className="mt-4 w-full flex flex-wrap gap-3 justify-center lg:justify-start">
+            {['HTML', 'CSS', 'Python', 'C#'].map((item, index) => (
+              <span
+                key={item}
+                className={`py-2 lg:py-4 px-3 text-xs lg:text-base font-bold opacity-50 lg:opacity-100 rounded-lg text-center text-foreground`}
+              >
+                <span className="py-4 px-3 rounded-lg text-center bg-rgba(0,5,1,1)" />
+                {item}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Additional Skills for id === 3 */}
+        {id === 3 && (
+          <div className="mt-4 w-full flex flex-wrap gap-3 justify-center lg:justify-start">
+            {['SQL', 'MongoDB', 'Vite', 'TailWind'].map((item, index) => (
+              <span
+                key={item}
+                className={`py-2 lg:py-4 px-3 text-xs lg:text-base font-bold opacity-50 lg:opacity-100 rounded-lg text-center text-foreground`}
+              >
+                {item}
+                <span className="py-4 px-3 rounded-lg text-center bg-rgba(0,5,1,1)" />
+              </span>
+              
+            ))}
+            
+          </div>
+        )}
+
+      </div>
     </div>
-    <div className="mt-2 mb-5 font-sans font-bold text-white overflow-hidden text-ellipsis whitespace-normal">
-      {description}
-    </div>
-  </div>
-</div>
   );
 };
+
+

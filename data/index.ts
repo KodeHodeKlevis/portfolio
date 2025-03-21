@@ -23,8 +23,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "Small skills section",
-    description: "I constantly try to improve",
+    title: "These are the skills im good with",
+    description: "Always looking to improve.",
     className: "lg:col-span-1 lg:row-span-2 md:col-span-1 md:row-span-1", // Span 1 column and 1 row on medium and larger screens
     imgName: "",
     titleClassName: "justify-center",
