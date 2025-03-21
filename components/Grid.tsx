@@ -1,5 +1,5 @@
-import { BentoGrid, BentoGridItem } from './ui/BentoGrid'; // Assuming these are correct imports
-import { gridItems } from '@/data'; // Assuming this is your grid data
+import { BentoGrid, BentoGridItem } from './ui/BentoGrid'; 
+import { gridItems } from '@/data'; 
 import '../components/aurora.css';
 
 const Grid = () => {
@@ -17,7 +17,7 @@ const Grid = () => {
             titleClassName={titleClassName}
             img={img}
             spareImg={spareImg}
-            showAvailableHours={showAvailableHours} // Pass the prop to BentoGridItem
+            showAvailableHours={showAvailableHours} 
           />
         ))}
       </BentoGrid>
