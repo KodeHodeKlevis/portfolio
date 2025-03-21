@@ -45,22 +45,11 @@ export const gridItems = [
   },
   {
     id: 5,
-    title: "Current big project working on",
-    description: "",
-    className: "lg:col-span-2 md:col-span-2 md:row-span-2", // Span 2 columns and 2 rows on medium and larger screens
-    imgName: "absolute right-0 bottom-0 md:w-96 w-60",
-    titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "",
-    spareImg: "",
-    showAvailableHours: false,
-  },
-  {
-    id: 6,
-    title: "What I am enthusiastic about",
-    description: "",
-    className: "lg:col-span-2 lg:row-span-2 md:col-span-2 md:row-span-1", // Span 2 columns and 1 row on medium and larger screens
+    title: "Current big project i am working on",
+    description: "This is a game being implemented inside a website, functioning and feeling like a real game.",
+    className: "lg:col-span-4 md:col-span-2 md:row-span-2", // Span 2 columns and 2 rows on medium and larger screens
     imgName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
+    titleClassName: "justify-center md:justify-start lg:justify-center",
     img: "",
     spareImg: "",
     showAvailableHours: false,

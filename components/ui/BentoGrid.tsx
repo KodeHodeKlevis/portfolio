@@ -207,6 +207,32 @@ export const BentoGridItem = ({
           </div>
         )}
 
+
+        {/* Game Project */}
+        {id === 5 && (
+          <div className="relative flex items-center justify-center w-full h-full">
+            {/* Game Image */}
+            <img
+              src="/game.svg"
+              alt="Game Project Image"
+              className="object-contain max-w-full max-h-[300px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] z-10 transition-transform duration-300 ease-in-out hover:scale-90 hover:opacity-80"
+            />
+            
+            {/* Shop Image Positioned at the Bottom-Left Corner of the Game Image with Hover Effect */}
+            <img
+              src="/shop.svg"
+              alt="Shop Image"
+              className="absolute bottom-15 left-45 object-contain max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] z-0 transition-transform duration-300 ease-in-out hover:scale-110 hover:opacity-80"
+            />
+            
+            {/* Shop Image Positioned at the Bottom-Right Corner of the Game Image with Hover Effect */}
+            <img
+              src="/shop-1.svg"
+              alt="Shop Image"
+              className="absolute bottom-15 right-45 object-contain max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] z-0 transition-transform duration-300 ease-in-out hover:scale-110 hover:opacity-80"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
