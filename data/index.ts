@@ -55,3 +55,22 @@ export const gridItems = [
     showAvailableHours: false,
   },
 ];
+
+export const projects = [
+  {
+    id: 1,
+    title: "3D Solar System Planets to Explore",
+    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
+    img: "",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    link: "https://github.com/adrianhajdin?tab=repositories",
+  },
+  {
+    id: 2,
+    title: "Yoom - Video Conferencing App",
+    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
+    img: "",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    link: "https://github.com/adrianhajdin/zoom-clone",
+  },
+];

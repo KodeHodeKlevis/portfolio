@@ -5,7 +5,7 @@ import '../components/aurora.css';
 
 const Grid = () => {
   return (
-    <section id="about" className='aurora-background'>
+    <section id="/about" className=' py-10 aurora-background'>
       <BentoGrid>
         {gridItems.map(({ id, description, title, className, imgName, titleClassName, img, spareImg }) => (
           <BentoGridItem

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "motion/react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TextGenerateEffect = ({
@@ -14,56 +14,44 @@ export const TextGenerateEffect = ({
   filter?: boolean;
   duration?: number;
 }) => {
-  const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
-  useEffect(() => {
-    if (scope.current) {
-      animate(
-        "span",
-        {
-          opacity: 1,
-          filter: filter ? "blur(0px)" : "none",
-        },
-        {
-          duration: duration ? duration : 1,
-          delay: stagger(0.2),
-        }
-      );
-    }
-  }, [scope.current]);
 
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
+  const wordVariants = {
+    hidden: { opacity: 0, filter: "blur(10px)", scale: 0.8 },
+    visible: { opacity: 1, filter: filter ? "blur(0px)" : "none", scale: 1 },
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.3, delayChildren: 0.5 } },
+  };
+
+  return (
+    <motion.div
+      className={cn("font-bold", className)}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <div className="my-4">
+        <div className="dark:text-white text-black text-2xl leading-snug tracking-wide">
+          {wordsArray.map((word, idx) => (
             <motion.span
               key={word + idx}
-              className="opacity-0"
+              variants={wordVariants}
+              className="inline-block mr-2" // Added margin-right for spacing
               style={{
-                color: idx >= 3 ? "var(--custom-red)" : "var(--foreground)",  
-                filter: filter ? "blur(10px)" : "none",
-                textShadow: idx >= 3 ? "0px 0px 5px rgba(255, 255, 255, 0.4)" : "0px 0px 5px rgba(0, 0, 0, 0.4)",
-                textTransform: word.toLowerCase() === "portfolio" ? "uppercase" : "none", 
+                color: idx >= 3 ? "var(--custom-red)" : "var(--foreground)",
+                textShadow:
+                  idx >= 3 ? "0px 0px 5px rgba(255, 255, 255, 0.4)" : "0px 0px 5px rgba(0, 0, 0, 0.4)",
+                textTransform: word.toLowerCase() === "portfolio" ? "uppercase" : "none",
               }}
             >
               {word}{" "}
             </motion.span>
-          );
-        })}
-      </motion.div>
-    );
-  };
-  
-  
-
-  return (
-    <div className={cn("font-bold", className)}>
-      <div className="my-4">
-        <div className=" dark:text-white text-black text-2xl leading-snug tracking-wide">
-          {renderWords()}
+          ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

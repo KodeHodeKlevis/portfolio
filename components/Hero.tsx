@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,8 +15,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero"  className="pb-0 pt-0 bg-background relative flex items-center justify-center min-h-screen overflow-hidden"> 
-      <div className="absolute inset-0 flex items-center justify-center w-full h-full">
+    <section id="/hero"  className=" py-10 pb-0 pt-0 bg-background relative flex items-center justify-center min-h-screen overflow-hidden"> 
+      <div className="absolute py-10 inset-0 flex items-center justify-center w-full h-full">
         {/* Group 1: Red and White Spotlights Together */}
         <Spotlight
           className={cn(
@@ -89,7 +90,7 @@ const Hero = () => {
       <div className="flex justify-center relative z-10">
         <div className="flex flex-col items-center justify-center text-center px-4 sm:px-0">
           <h2 className="uppercase tracking-widest text-xs sm:text-sm md:text-xl text-foreground">
-            A Portfolio made with Next.js, Tailwind and FramerMotion
+            A Portfolio made with Next.js, Tailwind and Framer-Motion
           </h2>
           <TextGenerateEffect
             className="text-center text-[30px] sm:text-4xl md:text-5xl lg:text-7xl"
@@ -98,12 +99,16 @@ const Hero = () => {
           <p className="text-center md:tracking-wider mb-5 text-sm md:text-lg lg:text-1xl p-1">
             Hello, I&apos;m Klevis. <br/> An up and coming Full-Stack Developer based in Norway.
           </p>
-          <a href="#about" />
+          <Link
+            to="/recprojects" 
+            smooth
+            >
           <MagicButton 
             title="Show my work"
             icon={<FaLocationArrow />}
             position="right"
           />
+          </Link>
         </div>
       </div>
     </section>
