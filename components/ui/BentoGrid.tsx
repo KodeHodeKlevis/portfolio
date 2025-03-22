@@ -12,8 +12,8 @@ export const BentoGrid = ({ className, children }: { className?: string; childre
   return (
     <div
       className={cn(
-        "mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
-        "md:auto-rows-[18rem]",
+        "mx-auto grid max-w-7xl grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4",
+        "md:auto-rows-[20rem]",
         className
       )}
     >
@@ -178,6 +178,19 @@ export const BentoGridItem = ({
             {["HTML", "CSS", "Python", "C#"].map((item, index) => (
               <span key={item} className="py-2 lg:py-4 px-3 text-xs lg:text-base font-bold opacity-50 lg:opacity-100 rounded-lg text-center text-foreground">
                 {item}
+                <span className="py-4 px-3 rounded-lg text-center bg-rgba(0,5,1,1)" />
+              </span>
+              
+            ))}
+          </div>
+        )}
+         {/* Additional Skills for id === 3 */}
+         {id === 3 && (
+          <div className="mt-4 w-full flex flex-wrap gap-3 justify-center lg:justify-start">
+            <span className="py-4 px-3 rounded-lg text-center bg-rgba(0,5,1,1)" />
+            {["SQL", "MongoDB", "Sanity", "Tailwind"].map((item, index) => (
+              <span key={item} className="py-2 lg:py-4 px-3 text-xs lg:text-base font-bold opacity-50 lg:opacity-100 rounded-lg text-center text-foreground">
+                {item}
               </span>
             ))}
           </div>
@@ -212,22 +225,23 @@ export const BentoGridItem = ({
             <img
               src="/game.svg"
               alt="Game Project Image"
-              className="object-contain max-w-full max-h-[300px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] z-10 transition-transform duration-300 ease-in-out hover:scale-90 hover:opacity-80"
+              className="object-contain max-w-full max-h-[300px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] z-0 transition-transform duration-300 ease-in-out hover:scale-90 hover:opacity-80 "
             />
             {/* Shop Image Positioned at the Bottom-Left Corner of the Game Image with Hover Effect */}
             <img
               src="/shop.svg"
               alt="Shop Image"
-              className="absolute bottom-15 left-45 object-contain max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] z-0 transition-transform duration-300 ease-in-out hover:scale-110 hover:opacity-80"
+              className="absolute bottom-15 left-45 object-contain max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] z-10 transition-transform duration-300 ease-in-out hover:scale-110 hover:opacity-80"
             />
             {/* Shop Image Positioned at the Bottom-Right Corner of the Game Image with Hover Effect */}
             <img
               src="/shop-1.svg"
               alt="Shop Image"
-              className="absolute bottom-15 right-45 object-contain max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] z-0 transition-transform duration-300 ease-in-out hover:scale-110 hover:opacity-80"
+              className="absolute bottom-15 right-45 object-contain max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] z-10 transition-transform duration-300 ease-in-out hover:scale-110 hover:opacity-80"
             />
           </div>
         )}
+
       </div>
     </div>
   );
