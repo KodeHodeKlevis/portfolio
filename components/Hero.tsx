@@ -15,7 +15,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="/hero"  className=" py-10 pb-0 pt-0 bg-background relative flex items-center justify-center min-h-screen overflow-hidden"> 
+    <section id="home"  className=" py-10 pb-0 pt-0 bg-background relative flex items-center justify-center min-h-screen overflow-hidden"> 
       <div className="absolute py-10 inset-0 flex items-center justify-center w-full h-full">
         {/* Group 1: Red and White Spotlights Together */}
         <Spotlight
