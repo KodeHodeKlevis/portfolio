@@ -4,7 +4,13 @@ import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-
 import { cn } from "@/lib/utils";
 import { Link } from "react-scroll"; // Using react-scroll
 
-export const FloatingNav = ({ navItems, className }: { navItems: { name: string; link: string; icon?: React.ReactNode; }[]; className?: string; }) => {
+export const FloatingNav = ({
+  navItems,
+  className,
+}: {
+  navItems: { name: string; link: string; icon?: React.ReactNode }[];
+  className?: string;
+}) => {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(true);
 
@@ -38,14 +44,14 @@ export const FloatingNav = ({ navItems, className }: { navItems: { name: string;
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-5 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
+          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-4 py-3 rounded-xl border border-black/20 shadow-lg items-center justify-center space-x-4", // Reduced padding and changed rounded value
           className
         )}
         style={{
           backdropFilter: "blur(16px) saturate(180%)",
           backgroundColor: "#000501",
-          borderRadius: "12px",
-          border: "1px solid rgba(255, 255, 255, 0.125)",
+          borderRadius: "20px", // Increased border radius for a rounded look
+          border: "1px solid rgba(255, 255, 255, 0.2)", // Reduced border opacity and thickness
         }}
       >
         {navItems.map((navItem: any, idx: number) => (
@@ -60,7 +66,7 @@ export const FloatingNav = ({ navItems, className }: { navItems: { name: string;
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
-            <span className=" text-sm !cursor-pointer">{navItem.name}</span>
+            <span className="text-sm !cursor-pointer">{navItem.name}</span>
           </Link>
         ))}
       </motion.div>
